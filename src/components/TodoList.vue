@@ -53,7 +53,7 @@
       </ul>
     </div>
   </div>
-  <div v-else class="text-center leading-relaxed text-gray-400">
+  <div v-else class="text-center leading-relaxed text-gray-600">
     <h2 class="no-todos-found">No To-Do found</h2>
   </div>
 </template>

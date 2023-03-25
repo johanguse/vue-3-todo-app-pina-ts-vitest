@@ -1,7 +1,7 @@
 <template>
   <div class="container mx-auto px-4">
     <div class="mx-auto my-5 max-w-lg">
-      <div className="mb-8 text-center">
+      <div role="banner" className="mb-8 text-center">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -17,16 +17,18 @@
           />
         </svg>
         <h1 className="text-3xl text-gray-800 font-bold">To-Do App</h1>
-        <p className="text-gray-400 leading-relaxed">
+        <p className="text-gray-800 leading-relaxed">
           To-Do App with Vue 3, Pina w/ Local Storage, Tailwind and Vitest.
         </p>
       </div>
-      <div class="mb-10">
-        <TodoForm />
-      </div>
-      <div class="mb-5">
-        <TodoList />
-      </div>
+      <main role="main" class="main">
+        <div class="mb-10">
+          <TodoForm />
+        </div>
+        <div class="mb-5">
+          <TodoList />
+        </div>
+      </main>
     </div>
   </div>
 </template>

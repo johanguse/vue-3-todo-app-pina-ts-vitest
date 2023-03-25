@@ -19,6 +19,7 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
+    "@axe-core/playwright": "^4.6.0",
     "@vueuse/core": "^9.13.0",
     "pinia": "^2.0.32",
     "vue": "^3.2.47"
