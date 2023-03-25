@@ -3,7 +3,14 @@
     @submit.prevent="addItemAndClear(todo)"
     class="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0 md:block md:space-y-3"
   >
-    <input v-model="todo" type="text" aria-label="todo" placeholder="Todo" class="input" required />
+    <input
+      v-model="todo"
+      type="text"
+      aria-label="todo"
+      placeholder="To-Do name"
+      class="input"
+      required
+    />
     <button class="button" type="submit">Add To-Do</button>
   </form>
 </template>
