@@ -20,10 +20,10 @@
         <p className="text-gray-400 leading-relaxed">Made with Vue 3, Pina, Tailwind, Vitest.</p>
       </div>
       <div class="mb-10">
-        <todo-form />
+        <TodoForm />
       </div>
       <div class="mb-5">
-        <todo-list />
+        <TodoList />
       </div>
     </div>
   </div>

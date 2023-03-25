@@ -19,6 +19,7 @@
 import { ref, defineComponent } from 'vue'
 import { useTodoListStore } from '../stores/todoList'
 export default defineComponent({
+  name: 'TodoForm',
   setup() {
     const todo = ref('')
     const store = useTodoListStore()

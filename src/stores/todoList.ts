@@ -25,6 +25,12 @@ export const useTodoListStore = defineStore('todoList', {
         todoItem.completed = !todoItem.completed
       }
     },
+    toggleAllTodoItems() {
+      const allCompleted = this.todoList.every((item) => item.completed)
+      this.todoList.forEach((item) => {
+        item.completed = !allCompleted
+      })
+    },
     removeTodoItem(id: TodoItem['id']) {
       this.todoList = this.todoList.filter((item) => item.id !== id)
     },

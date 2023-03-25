@@ -1,12 +1,21 @@
 <template>
   <div v-if="!todoListLength">
-    <div class="remove-all">
-      <button @click.stop="removeAllTodoItems" class="button button__remove-all">Remove All</button>
+    <div class="todo-options">
+      <button @click.stop="toggleAllTodoItems" class="todo-options__button button__toggle-all">
+        Toggle All Complete
+      </button>
+      <button @click.stop="removeAllTodoItems" class="todo-options__button button__remove-all">
+        Remove All To-do's
+      </button>
     </div>
     <div v-for="todo in todoList" :key="todo.id" class="todo-list__item">
       <span :class="{ completed: todo.completed }">{{ todo.title }}</span>
       <div class="buttons">
-        <button @click.stop="toggleTodoItem(todo.id)" class="buttons__item button__complete">
+        <button
+          @click.stop="toggleTodoItem(todo.id)"
+          class="buttons__item button__complete"
+          :class="{ completed: todo.completed }"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -50,6 +59,7 @@ import { computed, defineComponent } from 'vue'
 import { useTodoListStore } from '../stores/todoList'
 import { storeToRefs } from 'pinia'
 export default defineComponent({
+  name: 'TodoList',
   setup() {
     const store = useTodoListStore()
     const { todoList } = storeToRefs(store)
@@ -58,6 +68,7 @@ export default defineComponent({
       todoList,
       toggleTodoItem,
       removeTodoItem,
+      toggleAllTodoItems: () => store.toggleAllTodoItems(),
       removeAllTodoItems: () => store.removeAllTodoItems(),
       todoListLength: computed(() => store.todoListLength)
     }
@@ -66,8 +77,11 @@ export default defineComponent({
 </script>
 
 <style lang="postcss" scoped>
-.remove-all {
-  @apply mb-4 flex justify-end text-gray-400;
+.todo-options {
+  @apply mb-4 flex items-center justify-between;
+}
+.todo-options__button {
+  @apply rounded px-4 py-2 text-sm text-gray-500;
 }
 .todo-list__item {
   @apply mb-4 flex items-center justify-between rounded bg-white px-8 pt-6 pb-8 shadow-sm;
@@ -80,6 +94,9 @@ export default defineComponent({
 }
 .buttons__item {
   @apply mx-auto h-10 w-10 rounded-lg text-center text-sm font-medium text-white;
+}
+.buttons__item.completed {
+  @apply bg-gray-400;
 }
 .buttons__item--svg {
   @apply mx-auto h-6 w-6;
