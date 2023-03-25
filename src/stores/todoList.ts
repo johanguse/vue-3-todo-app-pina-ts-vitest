@@ -8,25 +8,28 @@ export const useTodoListStore = defineStore('todoList', {
   }),
   getters: {
     getTodoList: (state) => state.todoList,
-    getTodoItem: (state) => (id: number) => state.todoList.find((item) => item.id === id),
-    todoListIsEmpty: (state) => state.todoList.length === 0
+    getTodoItem: (state) => (id: TodoItem['id']) => state.todoList.find((item) => item.id === id),
+    todoListLength: (state) => state.todoList.length === 0
   },
   actions: {
-    addTodoItem(title: string) {
+    addTodoItem(title: TodoItem['title']) {
       this.todoList.push({
         id: this.nextId++,
         title,
         completed: false
       })
     },
-    removeTodoItem(id: number) {
-      this.todoList = this.todoList.filter((item) => item.id !== id)
-    },
-    toggleTodoItem(id: number) {
+    toggleTodoItem(id: TodoItem['id']) {
       const todoItem = this.getTodoItem(id)
       if (todoItem) {
         todoItem.completed = !todoItem.completed
       }
+    },
+    removeTodoItem(id: TodoItem['id']) {
+      this.todoList = this.todoList.filter((item) => item.id !== id)
+    },
+    removeAllTodoItems() {
+      this.todoList = []
     }
   }
 })

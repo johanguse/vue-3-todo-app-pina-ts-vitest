@@ -9,12 +9,11 @@ describe('TodoForm', () => {
     setActivePinia(createPinia())
   })
 
-  it('should render a form with an input and a button and 3 itens', async () => {
+  it('should render a form with an input and a button', () => {
     const wrapper = mount(TodoForm)
-    expect(wrapper.find('form')).toBeTruthy()
-    expect(wrapper.find('input')).toBeTruthy()
-    expect(wrapper.find('button')).toBeTruthy()
-    expect(useTodoListStore().todoList).toHaveLength(0)
+    expect(wrapper.find('form').exists()).toBe(true)
+    expect(wrapper.find('input').exists()).toBe(true)
+    expect(wrapper.find('button').exists()).toBe(true)
   })
   it('should add new todo item to the list', async () => {
     const wrapper = mount(TodoForm)

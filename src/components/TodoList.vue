@@ -1,5 +1,8 @@
 <template>
-  <div v-if="!isEmpty">
+  <div v-if="!todoListLength">
+    <div class="remove-all">
+      <button @click.stop="removeAllTodoItems" class="button button__remove-all">Remove All</button>
+    </div>
     <div v-for="todo in todoList" :key="todo.id">
       <div class="todo-list__item">
         <span :class="{ completed: todo.completed }">{{ todo.title }}</span>
@@ -57,13 +60,17 @@ export default defineComponent({
       todoList,
       toggleTodoItem,
       removeTodoItem,
-      isEmpty: computed(() => store.todoListIsEmpty)
+      removeAllTodoItems: () => store.removeAllTodoItems(),
+      todoListLength: computed(() => store.todoListLength)
     }
   }
 })
 </script>
 
 <style lang="postcss" scoped>
+.remove-all {
+  @apply mb-4 flex justify-end text-gray-400;
+}
 .todo-list__item {
   @apply mb-4 flex items-center justify-between rounded bg-white px-8 pt-6 pb-8 shadow-sm;
 }
