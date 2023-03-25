@@ -4,7 +4,7 @@ import { defineStore } from 'pinia'
 export const useTodoListStore = defineStore('todoList', {
   state: () => ({
     todoList: [] as TodoItem[],
-    nextId: 3
+    nextId: 0
   }),
   getters: {
     getTodoList: (state) => state.todoList,
