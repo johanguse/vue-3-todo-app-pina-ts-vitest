@@ -17,7 +17,9 @@
           />
         </svg>
         <h1 className="text-3xl text-gray-800 font-bold">To-Do App</h1>
-        <p className="text-gray-400 leading-relaxed">Made with Vue 3, Pina, Tailwind, Vitest.</p>
+        <p className="text-gray-400 leading-relaxed">
+          To-Do App with Vue 3, Pina w/ Local Storage, Tailwind and Vitest.
+        </p>
       </div>
       <div class="mb-10">
         <TodoForm />
