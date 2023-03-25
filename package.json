@@ -1,7 +1,7 @@
 {
   "name": "vue3-ts-pina",
   "version": "1.0.0",
-  "description": "To-Do App with Vue 3, Pina w/ Local Storage, Tailwind and Vitest",
+  "description": "To-Do App with Vue 3, Pina w/ Local Storage, Vitest and Playwright",
   "author": {
     "name": "Johan Guse",
     "url": "https://johanguse.dev"

@@ -17,8 +17,8 @@
           />
         </svg>
         <h1 className="text-3xl text-gray-800 font-bold">To-Do App</h1>
-        <p className="text-gray-800 leading-relaxed">
-          To-Do App with Vue 3, Pina w/ Local Storage, Tailwind and Vitest.
+        <p className="text-gray-800 px-8 leading-relaxed">
+          To-Do App with Vue 3, Pina w/ Local Storage, Tailwind, Vitest and Playwright
         </p>
       </div>
       <main role="main" class="main">
