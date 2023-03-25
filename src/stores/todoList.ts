@@ -1,9 +1,10 @@
 import type { TodoItem } from '../models/todoItem'
 import { defineStore } from 'pinia'
+import { useStorage } from '@vueuse/core'
 
 export const useTodoListStore = defineStore('todoList', {
   state: () => ({
-    todoList: [] as TodoItem[],
+    todoList: useStorage<TodoItem[]>('todoList', []),
     nextId: 0
   }),
   getters: {
