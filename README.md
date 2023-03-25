@@ -1,4 +1,5 @@
-# vue3-ts-pina
+[![Netlify Status](https://api.netlify.com/api/v1/badges/b76935a6-1da8-49d3-90b7-c64d957afa84/deploy-status)](https://app.netlify.com/sites/guileless-peony-fd4e78/deploys)
+# To-Do App with Vue 3, Pina, Tailwind, Vitest
 
 This template should help get you started developing with Vue 3 in Vite.
 
