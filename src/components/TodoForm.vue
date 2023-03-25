@@ -3,6 +3,7 @@
     @submit.prevent="addItemAndClear(todo)"
     class="items-center gap-x-3 space-y-3 sm:flex sm:space-y-0 md:block md:space-y-3"
   >
+    <label class="sr-only" for="todo">To-Do name</label>
     <input
       v-model="todo"
       type="text"
